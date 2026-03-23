@@ -1,0 +1,207 @@
+{
+  "@context": {
+    "bb": "http://iridl.ldeo.columbia.edu/ontologies/gisuri/geobb/",
+    "irigaz": "http://iridl.ldeo.columbia.edu/ontologies/irigaz_frwk.owl#",
+    "term": "http://iridl.ldeo.columbia.edu/ontologies/iriterms.owl#",
+    "irigaz:id": {
+      "@type": "@id"
+    },
+    "irigaz:hasPart": {
+      "@container": "@list",
+      "@type": "irigaz:GazEntity"
+    },
+    "term:label": {
+      "@language": "en"
+    }
+  },
+  "iridl:values": [
+    {
+      "bbox": "bb:35.35:-0.12:36.45:1.74:bb",
+      "label": "Baringo, Kenya"
+    },
+    {
+      "bbox": "bb:34.99:-0.87:35.72:-0.50:bb",
+      "label": "Bomet, Kenya"
+    },
+    {
+      "bbox": "bb:34.25:0.62:34.99:1.00:bb",
+      "label": "Bungoma, Kenya"
+    },
+    {
+      "bbox": "bb:33.89:-0.12:34.25:0.62:bb",
+      "label": "Busia, Kenya"
+    },
+    {
+      "bbox": "bb:34.99:0.25:35.72:1.37:bb",
+      "label": "Elgeyo-Marakwet, Kenya0"
+    },
+    {
+      "bbox": "bb:37.19:-0.87:37.92:-0.12:bb",
+      "label": "Embu, Kenya"
+    },
+    {
+      "bbox": "bb:38.65:-1.99:41.59:1.00:bb",
+      "label": "Garissa, Kenya"
+    },
+    {
+      "bbox": "bb:33.89:-0.87:34.99:-0.12:bb",
+      "label": "Homa Bay, Kenya"
+    },
+    {
+      "bbox": "bb:36.82:-0.12:39.39:2.12:bb",
+      "label": "Isiolo, Kenya"
+    },
+    {
+      "bbox": "bb:36.09:-3.11:37.92:-0.87:bb",
+      "label": "Kajiado, Kenya"
+    },
+    {
+      "bbox": "bb:34.25:0.25:34.99:0.62:bb",
+      "label": "Kakamega, Kenya"
+    },
+    {
+      "bbox": "bb:34.99:-0.50:35.72:-0.12:bb",
+      "label": "Kericho, Kenya"
+    },
+    {
+      "bbox": "bb:36.45:-1.24:37.55:-0.87:bb",
+      "label": "Kiambu, Kenya"
+    },
+    {
+      "bbox": "bb:39.02:-3.86:40.12:-2.37:bb",
+      "label": "Kilifi, Kenya"
+    },
+    {
+      "bbox": "bb:37.19:-0.87:37.55:-0.12:bb",
+      "label": "Kirinyaga, Kenya"
+    },
+    {
+      "bbox": "bb:34.62:-0.87:34.99:-0.50:bb",
+      "label": "Kisii, Kenya"
+    },
+    {
+      "bbox": "bb:34.25:-0.50:35.35:-0.12:bb",
+      "label": "Kisumu, Kenya"
+    },
+    {
+      "bbox": "bb:37.55:-3.11:39.02:-0.12:bb",
+      "label": "Kitui, Kenya"
+    },
+    {
+      "bbox": "bb:38.29:-4.61:39.76:-3.49:bb",
+      "label": "Kwale, Kenya"
+    },
+    {
+      "bbox": "bb:36.09:-0.12:37.55:1.00:bb",
+      "label": "Laikipia, Kenya"
+    },
+    {
+      "bbox": "bb:40.12:-2.37:41.59:-1.62:bb",
+      "label": "Lamu, Kenya"
+    },
+    {
+      "bbox": "bb:36.82:-1.62:37.92:-0.87:bb",
+      "label": "Machakos, Kenya"
+    },
+    {
+      "bbox": "bb:37.19:-3.11:38.65:-1.62:bb",
+      "label": "Makueni, Kenya"
+    },
+    {
+      "bbox": "bb:39.76:2.12:41.96:4.36:bb",
+      "label": "Mandera, Kenya"
+    },
+    {
+      "bbox": "bb:36.09:1.37:39.39:4.36:bb",
+      "label": "Marsabit, Kenya"
+    },
+    {
+      "bbox": "bb:37.19:-0.12:38.29:0.62:bb",
+      "label": "Meru, Kenya"
+    },
+    {
+      "bbox": "bb:33.89:-1.24:34.62:-0.50:bb",
+      "label": "Migori, Kenya"
+    },
+    {
+      "bbox": "bb:39.76:-4.23:39.76:-3.86:bb",
+      "label": "Mombasa, Kenya"
+    },
+    {
+      "bbox": "bb:36.82:-1.24:37.55:-0.50:bb",
+      "label": "Murang'a, Kenya"
+    },
+    {
+      "bbox": "bb:36.82:-1.24:37.19:-1.24:bb",
+      "label": "Nairobi, Kenya"
+    },
+    {
+      "bbox": "bb:35.35:-1.24:36.45:0.25:bb",
+      "label": "Nakuru, Kenya"
+    },
+    {
+      "bbox": "bb:34.62:-0.12:35.35:0.62:bb",
+      "label": "Nandi, Kenya"
+    },
+    {
+      "bbox": "bb:34.62:-1.99:36.45:-0.50:bb",
+      "label": "Narok, Kenya"
+    },
+    {
+      "bbox": "bb:34.62:-0.87:34.99:-0.50:bb",
+      "label": "Nyamira, Kenya"
+    },
+    {
+      "bbox": "bb:36.09:-0.87:36.82:0.25:bb",
+      "label": "Nyandarua, Kenya"
+    },
+    {
+      "bbox": "bb:36.45:-0.50:37.19:-0.12:bb",
+      "label": "Nyeri, Kenya"
+    },
+    {
+      "bbox": "bb:36.45:0.62:37.92:2.49:bb",
+      "label": "Samburu, Kenya"
+    },
+    {
+      "bbox": "bb:33.89:-0.50:34.62:0.25:bb",
+      "label": "Siaya, Kenya"
+    },
+    {
+      "bbox": "bb:37.55:-4.23:39.39:-2.74:bb",
+      "label": "Taita Taveta, Kenya"
+    },
+    {
+      "bbox": "bb:38.29:-3.11:40.86:-0.12:bb",
+      "label": "Tana River, Kenya"
+    },
+    {
+      "bbox": "bb:37.19:-0.50:38.29:-0.12:bb",
+      "label": "Tharaka-Nithi, Kenya"
+    },
+    {
+      "bbox": "bb:34.62:1.00:35.35:1.37:bb",
+      "label": "Trans Nzoia, Kenya"
+    },
+    {
+      "bbox": "bb:33.89:1.00:36.82:5.11:bb",
+      "label": "Turkana, Kenya"
+    },
+    {
+      "bbox": "bb:34.99:-0.12:35.72:1.00:bb",
+      "label": "Uasin Gishu, Kenya"
+    },
+    {
+      "bbox": "bb:34.62:-0.12:34.99:0.25:bb",
+      "label": "Vihiga, Kenya"
+    },
+    {
+      "bbox": "bb:39.02:0.25:40.86:3.61:bb",
+      "label": "Wajir, Kenya"
+    },
+    {
+      "bbox": "bb:34.62:1.00:35.72:2.49:bb",
+      "label": "West Pokot, Kenya"
+    }
+  ]
+}

@@ -18,7 +18,7 @@ detects anomalies against 40+ year historical baselines, and surfaces
 risk scores on an interactive dashboard.
 
 ## Project Architecture
-![Architecture](docs/architecture_diagram.png)
+![Architecture](docs\kenya_weather_gcp_architecture.svg)
 
 ## Tech Stack
 <!-- fill this in as you add tools -->
