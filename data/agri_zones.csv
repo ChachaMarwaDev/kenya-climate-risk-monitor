@@ -1,0 +1,47 @@
+county,agro_zone,zone_description
+Turkana,ASAL (Arid),Arid and semi-arid lands with low rainfall, high temperatures, and sparse vegetation
+Marsabit,ASAL (Arid),Arid and semi-arid lands with low rainfall, high temperatures, and sparse vegetation
+Mandera,ASAL (Arid),Arid and semi-arid lands with low rainfall, high temperatures, and sparse vegetation
+Wajir,ASAL (Arid),Arid and semi-arid lands with low rainfall, high temperatures, and sparse vegetation
+Garissa,ASAL (Arid),Arid and semi-arid lands with low rainfall, high temperatures, and sparse vegetation
+Isiolo,ASAL (Arid),Arid and semi-arid lands with low rainfall, high temperatures, and sparse vegetation
+Tana River,ASAL (Arid),Arid and semi-arid lands with low rainfall, high temperatures, and sparse vegetation
+West Pokot,ASAL (Arid),Arid and semi-arid lands with low rainfall, high temperatures, and sparse vegetation
+Samburu,ASAL (Arid),Arid and semi-arid lands with low rainfall, high temperatures, and sparse vegetation
+Kitui,Semi-Arid,Transition zone with moderate rainfall, characterized by dry spells and drought-resistant agriculture
+Makueni,Semi-Arid,Transition zone with moderate rainfall, characterized by dry spells and drought-resistant agriculture
+Kajiado,Semi-Arid,Transition zone with moderate rainfall, characterized by dry spells and drought-resistant agriculture
+Narok,Semi-Arid,Transition zone with moderate rainfall, characterized by dry spells and drought-resistant agriculture
+Baringo,Semi-Arid,Transition zone with moderate rainfall, characterized by dry spells and drought-resistant agriculture
+Laikipia,Semi-Arid,Transition zone with moderate rainfall, characterized by dry spells and drought-resistant agriculture
+Nairobi,Highland,High-altitude areas with cool temperatures, reliable rainfall, and fertile volcanic soils
+Kiambu,Highland,High-altitude areas with cool temperatures, reliable rainfall, and fertile volcanic soils
+Nyeri,Highland,High-altitude areas with cool temperatures, reliable rainfall, and fertile volcanic soils
+Kirinyaga,Highland,High-altitude areas with cool temperatures, reliable rainfall, and fertile volcanic soils
+Murang'a,Highland,High-altitude areas with cool temperatures, reliable rainfall, and fertile volcanic soils
+Nyandarua,Highland,High-altitude areas with cool temperatures, reliable rainfall, and fertile volcanic soils
+Meru,Highland,High-altitude areas with cool temperatures, reliable rainfall, and fertile volcanic soils
+Embu,Highland,High-altitude areas with cool temperatures, reliable rainfall, and fertile volcanic soils
+Tharaka-Nithi,Highland,High-altitude areas with cool temperatures, reliable rainfall, and fertile volcanic soils
+Nakuru,Highland,High-altitude areas with cool temperatures, reliable rainfall, and fertile volcanic soils
+Kericho,Highland,High-altitude areas with cool temperatures, reliable rainfall, and fertile volcanic soils
+Bomet,Highland,High-altitude areas with cool temperatures, reliable rainfall, and fertile volcanic soils
+Uasin Gishu,Highland,High-altitude areas with cool temperatures, reliable rainfall, and fertile volcanic soils
+Elgeyo-Marakwet,Highland,High-altitude areas with cool temperatures, reliable rainfall, and fertile volcanic soils
+Trans Nzoia,Highland,High-altitude areas with cool temperatures, reliable rainfall, and fertile volcanic soils
+Nandi,Highland,High-altitude areas with cool temperatures, reliable rainfall, and fertile volcanic soils
+Kisumu,Lake Basin,Areas surrounding Lake Victoria with high rainfall, warm temperatures, and fishing-agriculture economy
+Siaya,Lake Basin,Areas surrounding Lake Victoria with high rainfall, warm temperatures, and fishing-agriculture economy
+Homa Bay,Lake Basin,Areas surrounding Lake Victoria with high rainfall, warm temperatures, and fishing-agriculture economy
+Migori,Lake Basin,Areas surrounding Lake Victoria with high rainfall, warm temperatures, and fishing-agriculture economy
+Kisii,Lake Basin,Areas surrounding Lake Victoria with high rainfall, warm temperatures, and fishing-agriculture economy
+Nyamira,Lake Basin,Areas surrounding Lake Victoria with high rainfall, warm temperatures, and fishing-agriculture economy
+Kakamega,Lake Basin,Areas surrounding Lake Victoria with high rainfall, warm temperatures, and fishing-agriculture economy
+Vihiga,Lake Basin,Areas surrounding Lake Victoria with high rainfall, warm temperatures, and fishing-agriculture economy
+Bungoma,Lake Basin,Areas surrounding Lake Victoria with high rainfall, warm temperatures, and fishing-agriculture economy
+Busia,Lake Basin,Areas surrounding Lake Victoria with high rainfall, warm temperatures, and fishing-agriculture economy
+Mombasa,Coastal,Coastal strip with tropical climate, high humidity, and mangrove forests along the Indian Ocean
+Kilifi,Coastal,Coastal strip with tropical climate, high humidity, and mangrove forests along the Indian Ocean
+Kwale,Coastal,Coastal strip with tropical climate, high humidity, and mangrove forests along the Indian Ocean
+Taita-Taveta,Coastal,Coastal strip with tropical climate, high humidity, and mangrove forests along the Indian Ocean
+Lamu,Coastal,Coastal strip with tropical climate, high humidity, and mangrove forests along the Indian Ocean

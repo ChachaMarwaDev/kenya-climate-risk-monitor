@@ -1,0 +1,6 @@
+agro_zone,drought_threshold_pct,flood_7day_mm,critical_soil_moisture
+ASAL (Arid),20,50,15
+Semi-Arid,30,80,20
+Highland,40,120,25
+Lake Basin,45,150,30
+Coastal,35,100,22

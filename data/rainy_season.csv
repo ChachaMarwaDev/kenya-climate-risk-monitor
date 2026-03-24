@@ -1,0 +1,12 @@
+agro_zone,season_name,start_month,end_month,season_type
+ASAL (Arid),Long Rains (MAM),March,May,Primary growing season
+ASAL (Arid),Short Rains (OND),October,December,Secondary growing season
+ASAL (Arid),ASAL Extended Rains,April,September,Extended wet period (northern counties only)
+Semi-Arid,Long Rains (MAM),March,May,Primary growing season
+Semi-Arid,Short Rains (OND),October,December,Secondary growing season
+Highland,Long Rains (MAM),March,May,Primary growing season
+Highland,Short Rains (OND),October,December,Secondary growing season
+Lake Basin,Long Rains (MAM),March,May,Primary growing season
+Lake Basin,Short Rains (OND),October,December,Secondary growing season
+Coastal,Long Rains (MAM),March,May,Primary growing season
+Coastal,Short Rains (OND),October,December,Secondary growing season

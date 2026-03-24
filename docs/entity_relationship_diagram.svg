@@ -1,0 +1,178 @@
+<svg width="100%" viewBox="0 0 860 520" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="#73726c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+    <marker id="crow" viewBox="0 0 12 12" refX="2" refY="6" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M10 2L2 6L10 10" fill="none" stroke="#73726c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <line x1="10" y1="2" x2="10" y2="10" stroke="#73726c" stroke-width="1.5" stroke-linecap="round"/>
+    </marker>
+    <marker id="one" viewBox="0 0 10 12" refX="8" refY="6" markerWidth="6" markerHeight="8" orient="auto-start-reverse">
+      <line x1="8" y1="1" x2="8" y2="11" stroke="#73726c" stroke-width="1.5" stroke-linecap="round"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="860" height="520" fill="#ffffff"/>
+
+  <!-- Title -->
+  <text x="430" y="32" text-anchor="middle" font-size="15" font-weight="600" fill="#3d3d3a">Kenya Weather — Entity Relationship Diagram</text>
+
+  <!-- ══════════════════════════════════════════════════ -->
+  <!-- TABLE: kenya_counties  (x=40, y=55) -->
+  <!-- ══════════════════════════════════════════════════ -->
+  <g>
+    <!-- header -->
+    <rect x="40" y="55" width="200" height="32" rx="8" fill="#185FA5" stroke="#185FA5"/>
+    <rect x="40" y="79" width="200" height="8" fill="#185FA5" stroke="none"/>
+    <text x="140" y="76" text-anchor="middle" font-size="13" font-weight="600" fill="#ffffff">kenya_counties</text>
+    <!-- rows -->
+    <rect x="40" y="87" width="200" height="26" fill="#E6F1FB" stroke="#B5D4F4" stroke-width="0.5"/>
+    <text x="56" y="104" font-size="12" fill="#185FA5" font-weight="600">PK</text>
+    <text x="82" y="104" font-size="12" fill="#0C447C">county</text>
+    <text x="228" y="104" text-anchor="end" font-size="11" fill="#378ADD">string</text>
+
+    <rect x="40" y="113" width="200" height="26" fill="#ffffff" stroke="#B5D4F4" stroke-width="0.5"/>
+    <text x="56" y="130" font-size="12" fill="#73726c">  </text>
+    <text x="82" y="130" font-size="12" fill="#3d3d3a">lat</text>
+    <text x="228" y="130" text-anchor="end" font-size="11" fill="#888780">float</text>
+
+    <rect x="40" y="139" width="200" height="26" fill="#E6F1FB" stroke="#B5D4F4" stroke-width="0.5"/>
+    <text x="82" y="156" font-size="12" fill="#3d3d3a">lon</text>
+    <text x="228" y="156" text-anchor="end" font-size="11" fill="#888780">float</text>
+
+    <rect x="40" y="165" width="200" height="26" fill="#ffffff" stroke="#B5D4F4" stroke-width="0.5"/>
+    <text x="82" y="182" font-size="12" fill="#3d3d3a">lat_min / lat_max</text>
+    <text x="228" y="182" text-anchor="end" font-size="11" fill="#888780">float</text>
+
+    <rect x="40" y="191" width="200" height="26" fill="#E6F1FB" stroke="#B5D4F4" stroke-width="0.5"/>
+    <text x="82" y="208" font-size="12" fill="#3d3d3a">lon_min / lon_max</text>
+    <text x="228" y="208" text-anchor="end" font-size="11" fill="#888780">float</text>
+
+    <!-- bottom border radius fill -->
+    <rect x="40" y="207" width="200" height="10" fill="#E6F1FB" stroke="none"/>
+    <rect x="40" y="191" width="200" height="26" rx="0" fill="none" stroke="#B5D4F4" stroke-width="0.5"/>
+    <!-- outer border -->
+    <rect x="40" y="55" width="200" height="162" rx="8" fill="none" stroke="#185FA5" stroke-width="1.5"/>
+  </g>
+
+  <!-- ══════════════════════════════════════════════════ -->
+  <!-- TABLE: agri_zones  (x=330, y=55) -->
+  <!-- ══════════════════════════════════════════════════ -->
+  <g>
+    <rect x="330" y="55" width="210" height="32" rx="8" fill="#0F6E56" stroke="#0F6E56"/>
+    <rect x="330" y="79" width="210" height="8" fill="#0F6E56" stroke="none"/>
+    <text x="435" y="76" text-anchor="middle" font-size="13" font-weight="600" fill="#ffffff">agri_zones</text>
+
+    <rect x="330" y="87" width="210" height="26" fill="#E1F5EE" stroke="#9FE1CB" stroke-width="0.5"/>
+    <text x="346" y="104" font-size="12" fill="#0F6E56" font-weight="600">FK</text>
+    <text x="372" y="104" font-size="12" fill="#085041">county</text>
+    <text x="528" y="104" text-anchor="end" font-size="11" fill="#1D9E75">string</text>
+
+    <rect x="330" y="113" width="210" height="26" fill="#ffffff" stroke="#9FE1CB" stroke-width="0.5"/>
+    <text x="372" y="130" font-size="12" fill="#3d3d3a">agro_zone</text>
+    <text x="528" y="130" text-anchor="end" font-size="11" fill="#888780">string</text>
+
+    <rect x="330" y="139" width="210" height="26" fill="#E1F5EE" stroke="#9FE1CB" stroke-width="0.5"/>
+    <text x="372" y="156" font-size="12" fill="#3d3d3a">zone_description</text>
+    <text x="528" y="156" text-anchor="end" font-size="11" fill="#888780">string</text>
+
+    <rect x="330" y="139" width="210" height="26" rx="0" fill="none" stroke="#9FE1CB" stroke-width="0.5"/>
+    <rect x="330" y="55" width="210" height="110" rx="8" fill="none" stroke="#0F6E56" stroke-width="1.5"/>
+  </g>
+
+  <!-- ══════════════════════════════════════════════════ -->
+  <!-- TABLE: rainy_season  (x=330, y=290) -->
+  <!-- ══════════════════════════════════════════════════ -->
+  <g>
+    <rect x="330" y="290" width="210" height="32" rx="8" fill="#854F0B" stroke="#854F0B"/>
+    <rect x="330" y="314" width="210" height="8" fill="#854F0B" stroke="none"/>
+    <text x="435" y="311" text-anchor="middle" font-size="13" font-weight="600" fill="#ffffff">rainy_season</text>
+
+    <rect x="330" y="322" width="210" height="26" fill="#FAEEDA" stroke="#FAC775" stroke-width="0.5"/>
+    <text x="346" y="339" font-size="12" fill="#854F0B" font-weight="600">FK</text>
+    <text x="372" y="339" font-size="12" fill="#633806">agro_zone</text>
+    <text x="528" y="339" text-anchor="end" font-size="11" fill="#BA7517">string</text>
+
+    <rect x="330" y="348" width="210" height="26" fill="#ffffff" stroke="#FAC775" stroke-width="0.5"/>
+    <text x="372" y="365" font-size="12" fill="#3d3d3a">season_name</text>
+    <text x="528" y="365" text-anchor="end" font-size="11" fill="#888780">string</text>
+
+    <rect x="330" y="374" width="210" height="26" fill="#FAEEDA" stroke="#FAC775" stroke-width="0.5"/>
+    <text x="372" y="391" font-size="12" fill="#3d3d3a">start_month</text>
+    <text x="528" y="391" text-anchor="end" font-size="11" fill="#888780">string</text>
+
+    <rect x="330" y="400" width="210" height="26" fill="#ffffff" stroke="#FAC775" stroke-width="0.5"/>
+    <text x="372" y="417" font-size="12" fill="#3d3d3a">end_month</text>
+    <text x="528" y="417" text-anchor="end" font-size="11" fill="#888780">string</text>
+
+    <rect x="330" y="426" width="210" height="26" fill="#FAEEDA" stroke="#FAC775" stroke-width="0.5"/>
+    <text x="372" y="443" font-size="12" fill="#3d3d3a">season_type</text>
+    <text x="528" y="443" text-anchor="end" font-size="11" fill="#888780">string</text>
+
+    <rect x="330" y="290" width="210" height="162" rx="8" fill="none" stroke="#854F0B" stroke-width="1.5"/>
+  </g>
+
+  <!-- ══════════════════════════════════════════════════ -->
+  <!-- TABLE: thresholds  (x=620, y=290) -->
+  <!-- ══════════════════════════════════════════════════ -->
+  <g>
+    <rect x="620" y="290" width="210" height="32" rx="8" fill="#A32D2D" stroke="#A32D2D"/>
+    <rect x="620" y="314" width="210" height="8" fill="#A32D2D" stroke="none"/>
+    <text x="725" y="311" text-anchor="middle" font-size="13" font-weight="600" fill="#ffffff">thresholds</text>
+
+    <rect x="620" y="322" width="210" height="26" fill="#FCEBEB" stroke="#F7C1C1" stroke-width="0.5"/>
+    <text x="636" y="339" font-size="12" fill="#A32D2D" font-weight="600">FK</text>
+    <text x="662" y="339" font-size="12" fill="#791F1F">agro_zone</text>
+    <text x="818" y="339" text-anchor="end" font-size="11" fill="#E24B4A">string</text>
+
+    <rect x="620" y="348" width="210" height="26" fill="#ffffff" stroke="#F7C1C1" stroke-width="0.5"/>
+    <text x="662" y="365" font-size="12" fill="#3d3d3a">drought_threshold_pct</text>
+    <text x="818" y="365" text-anchor="end" font-size="11" fill="#888780">int</text>
+
+    <rect x="620" y="374" width="210" height="26" fill="#FCEBEB" stroke="#F7C1C1" stroke-width="0.5"/>
+    <text x="662" y="391" font-size="12" fill="#3d3d3a">flood_7day_mm</text>
+    <text x="818" y="391" text-anchor="end" font-size="11" fill="#888780">int</text>
+
+    <rect x="620" y="400" width="210" height="26" fill="#ffffff" stroke="#F7C1C1" stroke-width="0.5"/>
+    <text x="662" y="417" font-size="12" fill="#3d3d3a">critical_soil_moisture</text>
+    <text x="818" y="417" text-anchor="end" font-size="11" fill="#888780">int</text>
+
+    <rect x="620" y="290" width="210" height="136" rx="8" fill="none" stroke="#A32D2D" stroke-width="1.5"/>
+  </g>
+
+  <!-- ══════════════════════════════════════════════════ -->
+  <!-- RELATIONSHIPS -->
+  <!-- ══════════════════════════════════════════════════ -->
+
+  <!-- kenya_counties → agri_zones  (one to many, via county) -->
+  <!-- from right edge of kenya_counties (x=240, y=100) to left edge of agri_zones (x=330, y=100) -->
+  <line x1="240" y1="100" x2="330" y2="100" stroke="#73726c" stroke-width="1.5"
+        marker-start="url(#one)" marker-end="url(#crow)"/>
+  <text x="285" y="94" text-anchor="middle" font-size="11" fill="#5F5E5A">has zone</text>
+
+  <!-- agri_zones → rainy_season (one to many, via agro_zone) -->
+  <!-- from bottom of agri_zones (x=435, y=165) to top of rainy_season (x=435, y=290) -->
+  <line x1="435" y1="165" x2="435" y2="290" stroke="#73726c" stroke-width="1.5"
+        marker-start="url(#one)" marker-end="url(#crow)"/>
+  <text x="460" y="232" font-size="11" fill="#5F5E5A">has seasons</text>
+
+  <!-- agri_zones → thresholds (one to many, via agro_zone) -->
+  <!-- from right edge of agri_zones (x=540, y=130) → right, then down to thresholds top -->
+  <path d="M540 130 L590 130 L590 271 L725 271 L725 290"
+        fill="none" stroke="#73726c" stroke-width="1.5"
+        marker-start="url(#one)" marker-end="url(#crow)"/>
+  <text x="630" y="265" font-size="11" fill="#5F5E5A">defines limits</text>
+
+  <!-- ══════════════════════════════════════════════════ -->
+  <!-- LEGEND -->
+  <!-- ══════════════════════════════════════════════════ -->
+  <rect x="40" y="460" width="340" height="44" rx="6" fill="#F1EFE8" stroke="#D3D1C7" stroke-width="0.5"/>
+  <text x="56" y="478" font-size="11" font-weight="600" fill="#444441">Legend</text>
+  <line x1="56" y1="492" x2="90" y2="492" stroke="#73726c" stroke-width="1.5" marker-start="url(#one)" marker-end="url(#crow)"/>
+  <text x="96" y="496" font-size="11" fill="#5F5E5A">One-to-many</text>
+  <rect x="200" y="484" width="22" height="14" rx="3" fill="#185FA5"/>
+  <text x="228" y="496" font-size="11" fill="#5F5E5A">PK = Primary Key</text>
+  <rect x="290" y="484" width="22" height="14" rx="3" fill="#0F6E56"/>
+  <text x="318" y="496" font-size="11" fill="#5F5E5A">FK = Foreign Key</text>
+</svg>
