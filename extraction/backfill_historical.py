@@ -1,5 +1,5 @@
 # backfill_historical.py
-# Fetches daily weather data for all 47 counties from 2019 to 2024
+# Fetches daily weather data for all 47 counties from 2019 to 2025-03-23
 # Run once — takes about 10-15 minutes total
 
 import requests
@@ -85,12 +85,13 @@ def backfill_all_counties():
 
     # Fetch one year at a time to stay within API limits
     years = [
-        ("2019-01-01", "2019-12-31"),
-        ("2020-01-01", "2020-12-31"),
-        ("2021-01-01", "2021-12-31"),
-        ("2022-01-01", "2022-12-31"),
-        ("2023-01-01", "2023-12-31"),
-        ("2024-01-01", "2024-12-31"),
+        # ("2019-01-01", "2019-12-31"),
+        # ("2020-01-01", "2020-12-31"),
+        # ("2021-01-01", "2021-12-31"),
+        # ("2022-01-01", "2022-12-31"),
+        # ("2023-01-01", "2023-12-31"),
+        # ("2024-01-01", "2024-12-31"),
+        ("2025-01-01", "2025-03-25"),
     ]
 
     for start, end in years:
