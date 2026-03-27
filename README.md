@@ -22,6 +22,8 @@ risk scores on an interactive dashboard.
 
 ## Tech Stack
 <!-- fill this in as you add tools -->
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)   
+
 
 ## Project Structure
 <!-- paste folder tree here -->
