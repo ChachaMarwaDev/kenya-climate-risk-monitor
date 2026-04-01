@@ -16,3 +16,5 @@ for url in urls_to_try:
         print(f"{response.status_code} → {url}")
     except Exception as e:
         print(f"ERROR    → {url} | {e}")
+
+

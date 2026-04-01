@@ -10,11 +10,11 @@ import os
 from datetime import datetime
 
 BASE_URL = "https://archive-api.open-meteo.com/v1/archive"
-OUTPUT_DIR = "data/historical"
+OUTPUT_DIR = "kenya-climate-risk-monitor/data/historical"
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 # Load the counties we just extracted
-def load_counties(filepath="data\kenya_counties.csv") -> list:
+def load_counties(filepath=r"kenya-climate-risk-monitor\data\kenya_counties.csv") -> list:
     with open(filepath, newline="") as f:
         return list(csv.DictReader(f))
 
