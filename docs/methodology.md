@@ -17,6 +17,7 @@ How to calculate the standard precipitation index (SPI) for a given station and 
 
 
 Verifying google cloud with dlt
+0. run `gcloud auth application-default login`
 1. pip install "dlt[gs]" - install dlt with GCS support
 2. set our environment variables since I was on windows
     ```powershell
