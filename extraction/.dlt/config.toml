@@ -1,0 +1,12 @@
+# .dlt/config.toml
+# dlt reads this file automatically — no code changes needed when you switch buckets.
+# The actual bucket name comes from your environment variable GCS_BUCKET_NAME,
+# which is injected at runtime in each pipeline file.
+#
+# ADC (Application Default Credentials) is used for auth — same credentials
+# your Terraform setup uses. No service account key file needed.
+
+[runtime]
+log_level = "WARNING"    # change to "INFO" to see more detail during runs
+
+
