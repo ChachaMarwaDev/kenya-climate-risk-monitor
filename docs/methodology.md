@@ -16,3 +16,12 @@ How to calculate the standard precipitation index (SPI) for a given station and 
     | ≤ -2.00 | Extremely Dry |
 
 
+Verifying google cloud with dlt
+1. pip install "dlt[gs]" - install dlt with GCS support
+2. set our environment variables since I was on windows
+    ```powershell
+    $env:GCS_BUCKET_NAME = "your-actual-bucket-name"
+    $env:GCS_PROJECT_ID  = "your-actual-project-id"```
+3. Verify the ADC is visible to python
+    `python -c "import google.auth; creds, project = google.auth.default(); print('Project:', project)"`
+4. If it prints the project Id, ADC is working. If errors run `gcloud auth application-default login`
