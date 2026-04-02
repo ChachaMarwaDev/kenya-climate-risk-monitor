@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: raw_weather
+    database: "{{ env_var('GCP_PROJECT_ID', 'datazoomcamp-490302') }}"
+    schema: raw_weather          # your BigQuery dataset name
+    tables:
+      - name: daily_weather      # your raw table from dlt

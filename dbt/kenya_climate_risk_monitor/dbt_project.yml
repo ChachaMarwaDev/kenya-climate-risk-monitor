@@ -32,5 +32,7 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   kenya_climate_risk_monitor:
     # Config indicated by + and applies to all files under models/example/
-    example:
-      +materialized: view
+    staging:
+      +materialized: view        # staging models are views (cheap, no storage)
+    mart:
+      +materialized: table       # mart models are tables (fast for dashboards)
