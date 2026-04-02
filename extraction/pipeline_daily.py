@@ -17,7 +17,11 @@ import dlt
 from datetime import date, timedelta
 from pipeline_weather_source import fetch_all_counties   # ← shared fetch logic
 
-BUCKET = os.environ["GCS_BUCKET_NAME"]
+pipeline = dlt.pipeline(
+    pipeline_name="kenya_weather",
+    destination="bigquery",
+    dataset_name="raw_weather",
+)
 
 
 def get_target_date(args: list[str]) -> str:
@@ -61,13 +65,11 @@ def run():
 
     print(f"Kenya Weather — Daily Load")
     print(f"Target date : {target_date}")
-    print(f"Destination : gs://{BUCKET}/kenya_weather/weather_daily/")
+    print(f"Destination : BigQuery — raw_weather.weather_daily")
 
     pipeline = dlt.pipeline(
         pipeline_name="kenya_weather",            # same name — shared state in GCS
-        destination=dlt.destinations.filesystem(
-            bucket_url=f"gs://{BUCKET}"
-        ),
+        destination="bigquery",
         dataset_name="kenya_weather",
     )
 

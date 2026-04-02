@@ -18,7 +18,11 @@ import dlt
 # Run `gcloud auth application-default login` once if not already done.
 # ─────────────────────────────────────────────────────────────────────────────
 
-BUCKET = os.environ["GCS_BUCKET_NAME"]
+pipeline = dlt.pipeline(
+    pipeline_name="kenya_weather",
+    destination="bigquery",
+    dataset_name="raw_weather",
+)
 COUNTIES_FILE = r"C:\dev\kenya-climate-risk-monitor\data\kenya_counties.csv"
 
 
@@ -54,9 +58,7 @@ def dims_source():
 def run():
     pipeline = dlt.pipeline(
         pipeline_name="kenya_weather",            # shared name — ties state together
-        destination=dlt.destinations.filesystem(
-            bucket_url=f"gs://{BUCKET}"
-        ),
+        destination="bigquery",
         dataset_name="kenya_weather",             # top-level folder in your bucket
     )
 

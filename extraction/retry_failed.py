@@ -9,7 +9,11 @@ import os
 import dlt
 from pipeline_weather_source import fetch_county_weather, load_counties
 
-BUCKET = os.environ["GCS_BUCKET_NAME"]
+pipeline = dlt.pipeline(
+    pipeline_name="kenya_weather",
+    destination="bigquery",
+    dataset_name="raw_weather",
+)
 
 # Add any failed county + year combinations here
 FAILED = [
@@ -53,9 +57,7 @@ def retry_resource():
 def run():
     pipeline = dlt.pipeline(
         pipeline_name="kenya_weather",
-        destination=dlt.destinations.filesystem(
-            bucket_url=f"gs://{BUCKET}"
-        ),
+        destination="bigquery",
         dataset_name="kenya_weather",
     )
 

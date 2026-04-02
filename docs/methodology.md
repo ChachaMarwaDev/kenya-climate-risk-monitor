@@ -26,3 +26,4 @@ Verifying google cloud with dlt
 3. Verify the ADC is visible to python
     `python -c "import google.auth; creds, project = google.auth.default(); print('Project:', project)"`
 4. If it prints the project Id, ADC is working. If errors run `gcloud auth application-default login`
+

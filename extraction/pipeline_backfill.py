@@ -13,7 +13,12 @@ import sys
 import dlt
 from pipeline_weather_source import fetch_all_counties   # ← shared fetch logic
 
-BUCKET = os.environ["GCS_BUCKET_NAME"]
+def build_pipeline() -> dlt.Pipeline:
+    return dlt.pipeline(
+        pipeline_name="kenya_weather",
+        destination="bigquery",
+        dataset_name="raw_weather",
+    )
 
 # Edit this list to control which years to backfill.
 # Comment out years you've already loaded.
@@ -84,9 +89,7 @@ def historical_weather(start: str, end: str):
 def build_pipeline() -> dlt.Pipeline:
     return dlt.pipeline(
         pipeline_name="kenya_weather",            # same name as dims.py and daily.py
-        destination=dlt.destinations.filesystem(
-            bucket_url=f"gs://{BUCKET}"
-        ),
+        destination="bigquery",
         dataset_name="kenya_weather",
     )
 
