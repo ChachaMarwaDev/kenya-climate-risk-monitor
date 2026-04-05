@@ -62,10 +62,10 @@ def run():
         dataset_name="kenya_weather",             # top-level folder in your bucket
     )
 
-    print("Loading county dimensions to GCS...")
+    print("Loading county dimensions to bigquery...")
     info = pipeline.run(dims_source())
     print(info)
-    print("\nDone! Counties written to GCS.")
+    print("\nDone! Counties written to bigquery.")
 
 
 if __name__ == "__main__":

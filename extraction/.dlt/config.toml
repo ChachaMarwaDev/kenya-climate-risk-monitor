@@ -11,6 +11,3 @@ log_level = "WARNING"    # change to "INFO" to see more detail during runs
 
 [destination.bigquery]
 location = "europe-west1"
-
-[destination.bigquery.credentials]
-project_id = "datazoomcamp-490302"
