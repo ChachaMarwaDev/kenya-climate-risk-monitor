@@ -56,7 +56,7 @@ risk scores on an interactive dashboard.
 ## Dashboard
 <!-- add screenshots here when ready -->
 ### dbt lineage
-![dbt_lineage](kenya-climate-risk-monitor\docs\dbt_lineage.jpg)
+![dbt lineage](docs/dbt_lineage.jpg)
 
 ## Steps to Reproduce
 <!-- fill in as you build -->
