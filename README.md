@@ -65,4 +65,5 @@ risk scores on an interactive dashboard.
 **Chacha Marwa** — Junior Data Engineer
 - GitHub: [ChachaMarwaDev](https://github.com/ChachaMarwaDev)
 - LinkedIn: [chacha-marwa-dev](https://linkedin.com/in/chacha-marwa-dev-355394257)
+- X: [@chachamarwadev](https://x.com/chachamarwadev)
 - Portfolio: [chachamarwadev.com](https://sites.google.com/view/chachamarwadev)
