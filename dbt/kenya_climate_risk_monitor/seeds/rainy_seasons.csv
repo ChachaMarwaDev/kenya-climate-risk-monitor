@@ -11,15 +11,11 @@ Highland,Long Rains,3,5,wet
 Highland,Short Rains,10,12,wet
 Highland,Long Dry,6,9,dry
 Highland,Short Dry,1,2,dry
-LakeBasin,Long Rains,3,5,wet
-LakeBasin,Short Rains,8,9,wet
-LakeBasin,Long Dry,10,12,dry
-LakeBasin,Short Dry,1,2,dry
+Lake Basin,Long Rains,3,5,wet
+Lake Basin,Short Rains,8,9,wet
+Lake Basin,Long Dry,10,12,dry
+Lake Basin,Short Dry,1,2,dry
 Coastal,Long Rains,4,6,wet
 Coastal,Short Rains,10,12,wet
 Coastal,Long Dry,7,9,dry
 Coastal,Short Dry,1,3,dry
-RiftValley,Long Rains,3,5,wet
-RiftValley,Short Rains,10,12,wet
-RiftValley,Long Dry,6,9,dry
-RiftValley,Short Dry,1,2,dry

@@ -17,13 +17,16 @@ pipeline = dlt.pipeline(
 
 # Add any failed county + year combinations here
 FAILED = [
-    ("Taita-Taveta", "2007-01-01", "2007-12-31"),
-    ("Kajiado",      "2008-01-01", "2008-12-31"),
-    ("Uasin Gishu",  "2008-01-01", "2008-12-31"),
-    ("Bomet",        "2009-01-01", "2009-12-31"),
-    ("Wajir",        "2009-01-01", "2009-12-31"),
-    ("Nyeri",        "2013-01-01", "2013-12-31"),
-    ("Nyeri",        "2017-01-01", "2017-12-31"),
+    # ("Taita-Taveta", "2007-01-01", "2007-12-31"),
+    # ("Kajiado",      "2008-01-01", "2008-12-31"),
+    # ("Uasin Gishu",  "2008-01-01", "2008-12-31"),
+    # ("Bomet",        "2009-01-01", "2009-12-31"),
+    # ("Wajir",        "2009-01-01", "2009-12-31"),
+    # ("Nyeri",        "2013-01-01", "2013-12-31"),
+    # ("Nyeri",        "2017-01-01", "2017-12-31"),
+    
+    ("Nairobi",        "2026-04-05"),
+    ("Nyamira",        "2026-04-05"),
 ]
 
 
@@ -37,14 +40,27 @@ def retry_resource():
     counties = load_counties()
     county_lookup = {c["county"]: c for c in counties}
 
-    for county_name, start, end in FAILED:
+    for entry in FAILED:
+        if len(entry) == 3:
+            # Historical format: (county, start_date, end_date)
+            county_name, start, end = entry
+            label = f"{county_name} {start[:4]}"
+        elif len(entry) == 2:
+            # Daily format: (county, date)
+            county_name, start = entry
+            end = start          # same day, start == end
+            label = f"{county_name} {start}"
+        else:
+            print(f"  ✗ unrecognised entry format: {entry}")
+            continue
+
         county = county_lookup.get(county_name)
 
         if not county:
             print(f"  ✗ '{county_name}' not found in counties CSV — check spelling")
             continue
 
-        print(f"  Retrying {county_name} {start[:4]}...", end=" ", flush=True)
+        print(f"  Retrying {label}...", end=" ", flush=True)
         records = fetch_county_weather(county, start, end)
 
         if records:

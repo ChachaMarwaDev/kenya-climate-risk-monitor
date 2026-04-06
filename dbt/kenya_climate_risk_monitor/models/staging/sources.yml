@@ -13,3 +13,30 @@ sources:
     tables:
       - name: dim_counties        # your raw table from dlt
       - name: weather_daily        # your raw table from dlt
+
+models:
+  - name: stg_daily_weather
+    columns:
+      - name: weather_date
+        tests:
+          - not_null
+      - name: county
+        tests:
+          - not_null
+      - name: rainfall_mm
+        tests:
+          - not_null
+
+  - name: stg_counties
+    columns:
+      - name: county
+        tests:
+          - not_null
+          - unique
+      - name: agro_zone
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_agro_zones')
+                field: agro_zone

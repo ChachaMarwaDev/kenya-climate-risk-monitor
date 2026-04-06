@@ -20,9 +20,21 @@ risk scores on an interactive dashboard.
 ## Project Architecture
 ![Architecture](docs/kenya_weather_gcp_architecture.svg)
 
+
 ## Tech Stack
 <!-- fill this in as you add tools -->
-![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)   
+### Cloud Infrastructure
+![Google Cloud](https://img.shields.io/badge/Google_Cloud-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white)
+![BigQuery](https://img.shields.io/badge/BigQuery-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white)
+![Cloud Storage](https://img.shields.io/badge/Cloud_Storage-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white)
+
+### Data Engineering
+![dlt](https://img.shields.io/badge/dlt-FF6B6B?style=for-the-badge&logo=data&logoColor=white)
+![dbt](https://img.shields.io/badge/dbt-FF694B?style=for-the-badge&logo=dbt&logoColor=white)
+![Kestra](https://img.shields.io/badge/Kestra-4A154B?style=for-the-badge&logo=kestra&logoColor=white)
+
+### Infrastructure as Code
+![Terraform](https://img.shields.io/badge/Terraform-7B42BC?style=for-the-badge&logo=terraform&logoColor=white)
 
 
 ## Project Structure
@@ -37,12 +49,14 @@ risk scores on an interactive dashboard.
 
 ## Pipeline Phases
 - [x] Phase 1: Data gathering & reference tables
-- [ ] Phase 2: BigQuery schema & historical load
-- [ ] Phase 3: Automation & orchestration
+- [x] Phase 2: BigQuery schema & historical load
+- [x] Phase 3: Automation & orchestration
 - [ ] Phase 4: Dashboard
 
 ## Dashboard
 <!-- add screenshots here when ready -->
+### dbt lineage
+![dbt_lineage](kenya-climate-risk-monitor\docs\dbt_lineage.jpg)
 
 ## Steps to Reproduce
 <!-- fill in as you build -->

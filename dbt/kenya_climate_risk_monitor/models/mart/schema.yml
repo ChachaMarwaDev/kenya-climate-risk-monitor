@@ -1,0 +1,22 @@
+version: 2
+
+models:
+  - name: fct_climate_risk
+    columns:
+      - name: weather_date
+        tests:
+          - not_null
+      - name: county
+        tests:
+          - not_null
+      - name: is_drought_risk
+        tests:
+          - not_null
+      - name: is_flood_risk
+        tests:
+          - not_null
+      - name: season_type
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['wet', 'dry']
