@@ -27,3 +27,16 @@ Verifying google cloud with dlt
     `python -c "import google.auth; creds, project = google.auth.default(); print('Project:', project)"`
 4. If it prints the project Id, ADC is working. If errors run `gcloud auth application-default login`
 
+Kestra admin user
+1. Email - admin@kestra.io
+2. Paswword - TopSecret42
+
+Always before building the image
+`gcloud auth application-default login`
+Since I used ADC use this to get OAuth fields
+```powershell
+Get-Content "$env:APPDATA\gcloud\application_default_credentials.json" | ConvertFrom-Json | Select-Object client_id, client_secret, refresh_token | Out-File -FilePath "$env:TEMP\gcloud_output.txt"; Notepad "$env:TEMP\gcloud_output.txt"```
+Get the client_id, client_secret, new refresh token
+Update the extraction/.dlt/secrets.toml with the above details
+Then can you build the docker File
+`docker build -t kenya-pipeline:latest .`

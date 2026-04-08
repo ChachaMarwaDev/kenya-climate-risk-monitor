@@ -23,7 +23,7 @@ pipeline = dlt.pipeline(
     destination="bigquery",
     dataset_name="raw_weather",
 )
-COUNTIES_FILE = r"C:\dev\kenya-climate-risk-monitor\data\kenya_counties.csv"
+COUNTIES_FILE = "/app/data/kenya_counties.csv"
 
 
 @dlt.resource(

@@ -1,61 +1,65 @@
 # retry_failed.py
-# Retries specific county + year combinations that failed with 502 errors.
-# Appends results to the same weather_history table in GCS.
+# Retries specific county + date combinations that failed.
+# Reads failed entries from:
+#   1. FAILED_ENTRIES env var (set by Kestra flow input)
+#   2. /tmp/kestra-wd/failed_entries.json (written by backfill/daily)
+#   3. Falls back to empty list if neither exists
 #
 # Usage:
 #   python retry_failed.py
 
+import json
 import os
 import dlt
 from pipeline_weather_source import fetch_county_weather, load_counties
 
-pipeline = dlt.pipeline(
-    pipeline_name="kenya_weather",
-    destination="bigquery",
-    dataset_name="raw_weather",
-)
 
-# Add any failed county + year combinations here
-FAILED = [
-    # ("Taita-Taveta", "2007-01-01", "2007-12-31"),
-    # ("Kajiado",      "2008-01-01", "2008-12-31"),
-    # ("Uasin Gishu",  "2008-01-01", "2008-12-31"),
-    # ("Bomet",        "2009-01-01", "2009-12-31"),
-    # ("Wajir",        "2009-01-01", "2009-12-31"),
-    # ("Nyeri",        "2013-01-01", "2013-12-31"),
-    # ("Nyeri",        "2017-01-01", "2017-12-31"),
-    
-    ("Nairobi",        "2026-04-05"),
-    ("Nyamira",        "2026-04-05"),
-]
+def build_pipeline() -> dlt.Pipeline:
+    return dlt.pipeline(
+        pipeline_name="kenya_weather",
+        destination="bigquery",
+        dataset_name="raw_weather",  # ← consistent dataset name
+    )
+
+
+# Load failed entries from env var, file, or empty list
+_failed_env = os.environ.get("FAILED_ENTRIES")
+if _failed_env:
+    FAILED = json.loads(_failed_env)
+    print(f"Loading {len(FAILED)} failed entries from FAILED_ENTRIES env var")
+elif os.path.exists("/tmp/kestra-wd/failed_entries.json"):
+    with open("/tmp/kestra-wd/failed_entries.json") as f:
+        FAILED = json.load(f)
+    print(f"Loading {len(FAILED)} failed entries from failed_entries.json")
+else:
+    FAILED = []
+    print("No failed entries found — nothing to retry")
 
 
 @dlt.resource(
-    name="weather_history",          # same table name — appends to existing data
+    name="weather_history",
     write_disposition="append",
     primary_key=["date", "county"],
 )
 def retry_resource():
-    # Build a lookup so we can find county lat/lon by name
     counties = load_counties()
     county_lookup = {c["county"]: c for c in counties}
 
     for entry in FAILED:
         if len(entry) == 3:
-            # Historical format: (county, start_date, end_date)
+            # Historical format: [county, start_date, end_date]
             county_name, start, end = entry
             label = f"{county_name} {start[:4]}"
         elif len(entry) == 2:
-            # Daily format: (county, date)
+            # Daily format: [county, date]
             county_name, start = entry
-            end = start          # same day, start == end
+            end = start  # same day
             label = f"{county_name} {start}"
         else:
-            print(f"  ✗ unrecognised entry format: {entry}")
+            print(f"  ✗ Unrecognised entry format: {entry}")
             continue
 
         county = county_lookup.get(county_name)
-
         if not county:
             print(f"  ✗ '{county_name}' not found in counties CSV — check spelling")
             continue
@@ -71,13 +75,12 @@ def retry_resource():
 
 
 def run():
-    pipeline = dlt.pipeline(
-        pipeline_name="kenya_weather",
-        destination="bigquery",
-        dataset_name="kenya_weather",
-    )
+    if not FAILED:
+        print("Nothing to retry — exiting cleanly")
+        return
 
-    print("Retrying failed counties...\n")
+    pipeline = build_pipeline()
+    print(f"Retrying {len(FAILED)} failed entries...\n")
     info = pipeline.run(retry_resource())
     print(info)
     print("\n✓ Retry complete!")

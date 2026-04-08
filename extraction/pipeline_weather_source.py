@@ -17,7 +17,7 @@ DAILY_VARIABLES = [
 ]
 
 
-def load_counties(filepath: str = r"C:\dev\kenya-climate-risk-monitor\data\kenya_counties.csv") -> list[dict]:
+def load_counties(filepath: str = "/app/data/kenya_counties.csv") -> list[dict]:
     """Load all 47 counties with lat/lon from CSV."""
     with open(filepath, newline="") as f:
         return list(csv.DictReader(f))

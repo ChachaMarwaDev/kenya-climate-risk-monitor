@@ -51,13 +51,13 @@ risk scores on an interactive dashboard.
 - [x] Phase 1: Data gathering & reference tables
 - [x] Phase 2: BigQuery schema & historical load
 - [x] Phase 3: Automation & orchestration
-- [ ] Phase 4: Dashboard
+- [x] Phase 4: Dashboard
 
 ## Dashboard
 <!-- add screenshots here when ready -->
 ### dbt lineage
 ![dbt lineage](docs/dbt_lineage.jpg)
-
+![kestra dashboard](docs/kestra_dashboard.jpg)
 ## Steps to Reproduce
 <!-- fill in as you build -->
 
