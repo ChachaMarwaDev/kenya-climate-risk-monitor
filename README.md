@@ -37,12 +37,11 @@ risk scores on an interactive dashboard.
 ![Terraform](https://img.shields.io/badge/Terraform-7B42BC?style=for-the-badge&logo=terraform&logoColor=white)
 
 ### Containerization
-![Docker][https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white]
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
 
 ### Programming Languages
-![Python|66][https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white]
-![SQL|44][https://img.shields.io/badge/SQL-4479A1?style=for-the-badge&logo=postgresql&logoColor=white]
-
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![SQL](https://img.shields.io/badge/SQL-4479A1?style=for-the-badge&logo=postgresql&logoColor=white)
 
 ### Key Libraries
 - `dlt` - Data extraction and loading
@@ -154,10 +153,14 @@ kenya-climate-risk-monitor/
 
 ## Dashboard
 <!-- add screenshots here when ready -->
-### dbt lineage
-![dbt lineage](docs/dbt_lineage.jpg)
 
-![kestra dashboard](docs/kestra_dashboard.jpg)
+
+### dbt Lineage Dashboard
+![dbt transformation lineage diagram showing data flow from source tables (daily_weather, kenya_counties, dim_counties, dim_agro_zones, dim_thresholds, rainy_seasons) through staging models (stg_daily_weather, stg_counties) to the final fact table (fct_climate_risk) in BigQuery. Nodes are color-coded by type: teal for source files, green for seed data, white for staging and mart models. Arrows indicate dependencies between models, illustrating the complete data transformation pipeline.](docs/dbt_lineage.jpg)
+
+### Kestra Orchestration Dashboard
+![Kestra workflow orchestration dashboard displaying an automated data pipeline with multiple scheduled tasks and their execution status. The interface shows job definitions, run history, logs, and performance metrics for the Kenya climate risk monitoring system, with tabs for problems, output, debug console, ports, lineage, query results, and terminal across the top of the screen.](docs/kestra_dashboard.jpg)
+
 
 ## Steps to Reproduce
 <!-- fill in as you build -->
