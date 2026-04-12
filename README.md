@@ -153,6 +153,7 @@ kenya-climate-risk-monitor/
 
 ## Dashboard
 <!-- add screenshots here when ready -->
+For the full dashboard here is the ![link](https://lookerstudio.google.com/reporting/a2678be8-184f-4898-b8a5-d68bd25627b5)
 
 
 ### dbt Lineage Dashboard
