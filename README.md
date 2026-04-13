@@ -156,7 +156,7 @@ kenya-climate-risk-monitor/
 ### Overview of the dashboard
 ![An overview of the findings from my climate risk monitor.](docs/overview.jpg)
 For the full dashboard here is the link:
-![dashboard](https://lookerstudio.google.com/reporting/a2678be8-184f-4898-b8a5-d68bd25627b5)
+[![Live Dashboard](https://img.shields.io/badge/Live_Dashboard-FF6D00?style=for-the-badge&logo=google&logoColor=white)](https://lookerstudio.google.com/reporting/a2678be8-184f-4898-b8a5-d68bd25627b5)
 
 ### dbt Lineage Dashboard
 ![dbt transformation lineage diagram showing data flow from source tables (daily_weather, kenya_counties, dim_counties, dim_agro_zones, dim_thresholds, rainy_seasons) through staging models (stg_daily_weather, stg_counties) to the final fact table (fct_climate_risk) in BigQuery. Nodes are color-coded by type: teal for source files, green for seed data, white for staging and mart models. Arrows indicate dependencies between models, illustrating the complete data transformation pipeline.](docs/dbt_lineage.jpg)
