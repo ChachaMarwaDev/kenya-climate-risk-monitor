@@ -6,7 +6,7 @@
 ![GCS](https://img.shields.io/badge/Data_Lake-Google_Cloud_Storage-blue)
 ![Python](https://img.shields.io/badge/Language-Python_3.11-yellow)
 ![Looker](https://img.shields.io/badge/Visualization-Looker_Studio-green)
-![Status](https://img.shields.io/badge/Status-In_Progress-orange)
+![Status](https://img.shields.io/badge/Status-Complete-green)
 
 ## Problem Statement
 Kenya's 47 counties face recurring drought and flood crises that affect
@@ -153,6 +153,8 @@ kenya-climate-risk-monitor/
 
 ## Dashboard
 <!-- add screenshots here when ready -->
+### Overview of the dashboard
+![An overview of the findings from my climate risk monitor.](docs/overview.jpg)
 For the full dashboard here is the ![link](https://lookerstudio.google.com/reporting/a2678be8-184f-4898-b8a5-d68bd25627b5)
 
 
@@ -165,6 +167,149 @@ For the full dashboard here is the ![link](https://lookerstudio.google.com/repor
 
 ## Steps to Reproduce
 <!-- fill in as you build -->
+### Prerequisites
+ 
+Make sure you have the following installed before you begin:
+ 
+| Tool | Purpose |
+|---|---|
+| [Python 3.13.5](https://www.python.org/downloads/) | Running dlt pipelines |
+| [Docker Desktop](https://www.docker.com/products/docker-desktop/) | Running Kestra orchestration |
+| [Terraform](https://developer.hashicorp.com/terraform/install) | Provisioning GCP infrastructure |
+| [Google Cloud SDK](https://cloud.google.com/sdk/docs/install) (`gcloud`) | Authentication and GCP access |
+| [dlt](https://dlthub.com/docs/intro) | Data ingestion pipeline |
+| [dbt](https://docs.getdbt.com/docs/core/installation-overview) | Data transformation layer |
+ 
+---
+ 
+### 1. Clone the repository
+ 
+```bash
+git clone https://github.com/ChachaMarwaDev/kenya-climate-risk-monitor.git
+cd kenya-climate-risk-monitor
+```
+ 
+---
+ 
+### 2. Set up GCP
+ 
+You will need a GCP project with billing enabled.
+ 
+#### 2a. Authenticate with Application Default Credentials
+ 
+```bash
+gcloud auth application-default login
+gcloud config set project YOUR_GCP_PROJECT_ID
+```
+ 
+#### 2b. Enable required APIs
+ 
+```bash
+gcloud services enable bigquery.googleapis.com
+gcloud services enable storage.googleapis.com
+```
+ 
+#### 2c. Provision infrastructure with Terraform
+ 
+```bash
+cd terraform/
+terraform init
+terraform plan
+terraform apply
+```
+ 
+This creates:
+- A BigQuery dataset (`raw_weather`) in `europe-west1`
+- A GCS bucket for pipeline state
+ 
+> After `terraform apply`, note your project ID and bucket name — you will need them in the next steps.
+ 
+---
+ 
+### 3. Install Python dependencies
+ 
+```bash
+cd extraction/
+pip install dlt[bigquery] dlt[filesystem] requests
+```
+ 
+---
+ 
+### 4. Configure dlt
+ 
+The dlt config file is at `extraction/.dlt/config.toml`. Update it with your GCP project details:
+ 
+```toml
+[destination.bigquery]
+project_id = "your-gcp-project-id"
+location = "europe-west1"
+```
+ 
+---
+ 
+### 5. Run the dlt ingestion pipeline
+ 
+All pipeline scripts live in the `extraction/` folder.
+ 
+First load the dimension tables (counties, agro zones, thresholds, rainy seasons):
+ 
+```bash
+python pipeline_dims.py
+```
+ 
+Then run the historical backfill (loads weather data from 1981 to present — may take several minutes):
+ 
+```bash
+python pipeline_backfill.py
+```
+ 
+For ongoing daily updates:
+ 
+```bash
+python pipeline_daily.py
+```
+ 
+All pipelines load into BigQuery under the `raw_weather` dataset.
+ 
+---
+ 
+### 6. Run dbt transformations
+ 
+The dbt project lives inside `dbt/kenya_climate_risk_monitor/`.
+ 
+```bash
+cd ../dbt/kenya_climate_risk_monitor/
+dbt deps
+dbt seed
+dbt run
+dbt test
+```
+ 
+> `dbt seed` loads the reference CSV files from the `seeds/` folder (counties, agro zones, thresholds, rainy seasons).
+ 
+This builds the staging and mart layers, including `fct_climate_risk` — the final table used in the dashboard.
+ 
+---
+ 
+### 7. Start Kestra orchestration (optional)
+ 
+Kestra automates the daily pipeline runs using Docker. From the project root:
+ 
+```bash
+docker compose up -d
+```
+ 
+Then open [http://localhost:8080](http://localhost:8080) to access the Kestra UI and trigger or schedule flows.
+ 
+---
+ 
+### 8. View the dashboard
+ 
+The Looker Studio dashboard connects to `fct_climate_risk` in BigQuery.
+ 
+- **Live dashboard:** [![Live Dashboard](https://img.shields.io/badge/Live_Dashboard-FF6D00?style=for-the-badge&logo=google&logoColor=white)](YOUR_DASHBOARD_URL)
+- To connect your own BigQuery: open Looker Studio → Add data source → BigQuery → select your project → `raw_weather` → `fct_climate_risk`
+
 
 ## Contact
 **Chacha Marwa** — Junior Data Engineer
