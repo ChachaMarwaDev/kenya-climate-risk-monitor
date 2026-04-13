@@ -4,7 +4,7 @@
 ![GCP](https://img.shields.io/badge/Cloud-Google_Cloud_Platform-blue)
 ![BigQuery](https://img.shields.io/badge/Data_Warehouse-BigQuery-blue)
 ![GCS](https://img.shields.io/badge/Data_Lake-Google_Cloud_Storage-blue)
-![Python](https://img.shields.io/badge/Language-Python_3.11-yellow)
+![Python](https://img.shields.io/badge/Language-Python_3.13.5-yellow)
 ![Looker](https://img.shields.io/badge/Visualization-Looker_Studio-green)
 ![Status](https://img.shields.io/badge/Status-Complete-green)
 
@@ -155,8 +155,8 @@ kenya-climate-risk-monitor/
 <!-- add screenshots here when ready -->
 ### Overview of the dashboard
 ![An overview of the findings from my climate risk monitor.](docs/overview.jpg)
-For the full dashboard here is the ![link](https://lookerstudio.google.com/reporting/a2678be8-184f-4898-b8a5-d68bd25627b5)
-
+For the full dashboard here is the link:
+![dashboard](https://lookerstudio.google.com/reporting/a2678be8-184f-4898-b8a5-d68bd25627b5)
 
 ### dbt Lineage Dashboard
 ![dbt transformation lineage diagram showing data flow from source tables (daily_weather, kenya_counties, dim_counties, dim_agro_zones, dim_thresholds, rainy_seasons) through staging models (stg_daily_weather, stg_counties) to the final fact table (fct_climate_risk) in BigQuery. Nodes are color-coded by type: teal for source files, green for seed data, white for staging and mart models. Arrows indicate dependencies between models, illustrating the complete data transformation pipeline.](docs/dbt_lineage.jpg)
@@ -307,7 +307,7 @@ Then open [http://localhost:8080](http://localhost:8080) to access the Kestra UI
  
 The Looker Studio dashboard connects to `fct_climate_risk` in BigQuery.
  
-- **Live dashboard:** [![Live Dashboard](https://img.shields.io/badge/Live_Dashboard-FF6D00?style=for-the-badge&logo=google&logoColor=white)](YOUR_DASHBOARD_URL)
+- **Live dashboard:** [![Live Dashboard](https://img.shields.io/badge/Live_Dashboard-FF6D00?style=for-the-badge&logo=google&logoColor=white)](https://lookerstudio.google.com/reporting/a2678be8-184f-4898-b8a5-d68bd25627b5)
 - To connect your own BigQuery: open Looker Studio → Add data source → BigQuery → select your project → `raw_weather` → `fct_climate_risk`
 
 
